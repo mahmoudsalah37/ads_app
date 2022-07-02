@@ -91,11 +91,15 @@ class _AdsWidgetState extends State<AdsWidget> {
   @override
   Widget build(BuildContext context) {
     return Badge(
-      badgeContent: Text('$counter'),
+      badgeContent: Text(
+        '$counter',
+        style: const TextStyle(color: Colors.white),
+      ),
       child: CachedNetworkImage(
         width: double.infinity,
+        alignment: Alignment.center,
         imageUrl: widget.ads.elementAt(indexAds)['path'],
-        fit: BoxFit.fitWidth,
+        fit: BoxFit.cover,
       ),
     );
   }
